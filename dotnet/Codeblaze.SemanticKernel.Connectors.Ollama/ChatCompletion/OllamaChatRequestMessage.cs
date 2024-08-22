@@ -50,4 +50,13 @@ namespace Codeblaze.SemanticKernel.Connectors.Ollama.ChatCompletion
             Content = content;
         }
     }
+
+    internal sealed class OllamaChatRequestToolMessage : OllamaChatRequestMessage
+    {
+        public OllamaChatRequestToolMessage(string content)
+        {
+            Role = "tool";
+            Content = content;
+        }
+    }
 }

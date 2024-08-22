@@ -85,6 +85,8 @@ public class OllamaChatCompletionService(
                 yield return new OllamaChatRequestUserMessage(item.Content!);
             else if (item.Role == AuthorRole.Assistant)
                 yield return new OllamaChatRequestAssistantMessage(item.Content!);
+            else if (item.Role == AuthorRole.Tool)
+                yield return new OllamaChatRequestToolMessage(item.Content!);
         }
     }
 }
